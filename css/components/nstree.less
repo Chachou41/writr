@@ -1,0 +1,72 @@
+/* =Namespace Tree Navigation
+----------------------------------------------- */
+
+.nstree-widget h3 {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+ul.nstree,
+ul.nstree ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.nstree ul {
+    padding-left: 1em;
+}
+
+ul.nstree li {
+    padding: 2px 0;
+    line-height: 1.4;
+}
+
+ul.nstree li a {
+    color: @ini_background;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+ul.nstree li a:hover {
+    color: @ini_background_neu;
+}
+
+/* Directories */
+.nstree__dir > a::before {
+    font-family: "bootstrap-icons";
+    content: '\F3D0';
+    margin-right: 4px;
+    font-size: 12px;
+}
+
+.nstree__dir--open > a::before {
+    content: '\F3D2';
+}
+
+/* Files */
+.nstree__file > a::before {
+    font-family: "bootstrap-icons";
+    content: '\F3EE';
+    margin-right: 4px;
+    font-size: 12px;
+}
+
+/* Active page */
+.nstree__file--active > a {
+    font-weight: bold;
+    color: @ini_background !important;
+    text-decoration: underline;
+}
+
+/* Content area override (when sidebar is in light context) */
+.content-area .nstree-widget a {
+    color: @ini_text;
+}
+.content-area .nstree-widget a:hover {
+    color: @ini_theme_color;
+}
+.content-area .nstree__file--active > a {
+    color: @ini_theme_color !important;
+}

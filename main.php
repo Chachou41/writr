@@ -10,6 +10,7 @@
 
 if (!defined('DOKU_INC')) die();
 @require_once(dirname(__FILE__).'/tpl_functions.php');
+@require_once(dirname(__FILE__).'/sidebar_tree.php');
 header('X-UA-Compatible: IE=edge,chrome=1');
 $showSidebar = page_findnearest($conf['sidebar']);
 ?>
@@ -65,6 +66,11 @@ $showSidebar = page_findnearest($conf['sidebar']);
             </header><!-- #writr__masthead -->
 
             <div id="writr__secondary" class="widget-area" role="complementary">
+                <div class="widget nstree-widget">
+                    <h3><?php echo $lang['btn_index'] ?></h3>
+                    <?php tpl_nstree(); ?>
+                </div>
+
                 <?php if ($conf['sidebar']): ?>
                     <div class="widget">
                         <?php tpl_includeFile('sidebarheader.html') ?>
